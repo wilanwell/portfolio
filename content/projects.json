@@ -1,0 +1,162 @@
+[
+  {
+    "slug": "herbasabah",
+    "name": "HerbaSabah",
+    "category": "Herbal knowledge · Community · Mobile",
+    "summary": "A community herbal knowledge app with preliminary identification and reference-based AI contributions.",
+    "tagline": "Local knowledge. Shared discovery.",
+    "status": "In development",
+    "statusAsOf": "2026-10-30",
+    "platform": "Flutter mobile application",
+    "period": "",
+    "role": "",
+    "contributions": [],
+    "technologies": [
+      "Flutter",
+      "Dart",
+      "Supabase",
+      "Gemini"
+    ],
+    "cover": "/assets/herbasabah-icon.png",
+    "coverAlt": "HerbaSabah application icon featuring a herb, mountain and mortar",
+    "coverCaption": "HerbaSabah application identity",
+    "coverKind": "brand",
+    "github": "",
+    "demo": "",
+    "store": "",
+    "overview": "HerbaSabah brings herbal information and community contributions into a mobile application. It combines knowledge exploration, preliminary image-based identification and workflows for reviewing contributed content. The app is intended for education and community reference, not medical advice.",
+    "problem": "Herbal information can come from community experience and different reference materials. This project explores how that information can be organised, contributed and reviewed through a coherent mobile experience.",
+    "objectives": [
+      "Make Sabah herbal knowledge accessible through a mobile interface.",
+      "Let community members contribute information and supporting references.",
+      "Support content review, reporting and contribution status tracking.",
+      "Help users prepare AI-assisted drafts that they can check against their sources."
+    ],
+    "features": [
+      {
+        "title": "Explore herbal knowledge",
+        "text": "Browse herbal information and use it as a starting point for learning and community reference."
+      },
+      {
+        "title": "Preliminary identification",
+        "text": "Use an image to obtain an initial identification suggestion. Results require further checking and are not definitive species confirmation."
+      },
+      {
+        "title": "Community contributions",
+        "text": "Submit knowledge through contribution workflows and follow its review status."
+      },
+      {
+        "title": "Reference-based AI drafting",
+        "text": "Prepare a draft using selected text, images and PDF references. PDF extracts can include quotations and page numbers for review before submission."
+      },
+      {
+        "title": "Source discovery and assistance",
+        "text": "Open Google searches for original sources and use the in-app assistant to explore herbal information."
+      },
+      {
+        "title": "Content review and reporting",
+        "text": "Manage contributions and reports through dedicated review and moderation workflows."
+      }
+    ],
+    "architecture": "The Flutter code is organised by feature, separating presentation, domain logic and data access. Supabase provides authentication, PostgreSQL, file storage and feature-specific backend functions.",
+    "challenges": [
+      {
+        "title": "Making AI output traceable to its sources",
+        "problem": "An extracted statement is difficult to review if the user cannot see where it came from.",
+        "solution": "The PDF contribution flow connects extracted information with source quotations and page numbers. Users select the references, inspect the draft and decide what to submit. Document errors and service failures are handled separately."
+      }
+    ],
+    "validation": "Recorded validation includes Flutter and backend tests, plus phone checks of PDF selection, private document access, source search and draft review. These checks apply to the documented contribution workflows; the entire application is not described as production-ready.",
+    "next": "Continue refining the contribution interface and verify further changes through focused tests and device checks.",
+    "reflection": "This project connects interface design, community content, backend data and AI-assisted workflows. It highlights the importance of reviewable sources and clear handling of partial failures."
+  },
+  {
+    "slug": "pengajian-am",
+    "name": "Pengajian AM STPM Objektif",
+    "category": "Education · Mobile learning · Android",
+    "summary": "An Android learning application inspired by my experience as an STPM student. It brings together objective quizzes, answer explanations, mistake review and focused ABK practice to support independent revision.",
+    "tagline": "From personal learning experience to a mobile revision application.",
+    "status": "Closed testing",
+    "statusAsOf": "2026-10-30",
+    "platform": "Android · Flutter",
+    "period": "5 July 2026",
+    "startDate": "2026-07-05",
+    "projectType": "Personal educational technology project",
+    "targetUsers": "Pengajian Am STPM students",
+    "role": "Product Owner · AI-Assisted Application Development",
+    "contributions": [
+      "Define the product requirements and plan the learning flow around students' revision needs.",
+      "Use AI tools to support implementation and troubleshooting, then review changes through hands-on checks and test results.",
+      "Prioritise fixes and coordinate release preparation for Google Play Closed Testing."
+    ],
+    "technologies": [
+      "Flutter",
+      "Dart",
+      "Riverpod",
+      "Supabase",
+      "SharedPreferences"
+    ],
+    "cover": "/assets/pengajian-am-home.png",
+    "coverAlt": "Guest home interface showing learning progress, quiz shortcuts and ranking entry",
+    "coverCaption": "Guest Home — rendered from the application's Flutter widgets.",
+    "coverLabel": "Flutter widget render",
+    "coverKind": "screen",
+    "github": "",
+    "demo": "",
+    "store": "",
+    "overview": "An Android revision app inspired by my STPM experience, designed to make objective question practice easier to access and repeat.",
+    "inspiration": {
+      "title": "Why I Started This Project",
+      "paragraphs": [
+        "During my STPM studies, I found that learning through questions and answers helped me understand facts in the context of an examination. Reviewing incorrect answers also helped me identify what I needed to revisit.",
+        "This experience inspired me to explore a mobile application that connects practice, feedback and mistake review in one learning flow."
+      ]
+    },
+    "problem": "Pengajian Am STPM involves a lot of facts to remember. As an STPM student, I found that reading factual notes over and over could feel repetitive and boring, making it harder to stay motivated to revise. Finding suitable practice questions also took time and effort.",
+    "solution": "Pengajian AM STPM Objektif brings objective practice questions into a mobile app so students can practise regularly, wherever they are. Topic-based quizzes, answer explanations and a Mistake Book help them revisit facts, understand their mistakes and focus on areas they have yet to master.",
+    "objectives": [],
+    "features": [
+      {
+        "title": "Topic-based quizzes",
+        "text": "Practise by semester and topic, then review results and available answer explanations."
+      },
+      {
+        "title": "Mistake Book",
+        "text": "Return to incorrectly answered questions for another round of revision."
+      },
+      {
+        "title": "Focused ABK practice · Semester 2",
+        "text": "Where available, practise Alih Bentuk Komunikasi (ABK) with existing questions selected using rules and available mistake records. Core practice requires no AI request."
+      },
+      {
+        "title": "Guest learning",
+        "text": "Start without an account. Progress stays on the current device; completed quiz records can be transferred when signing in.",
+        "note": "Clearing app data or uninstalling can remove guest records that have not been transferred."
+      }
+    ],
+    "architecture": "The codebase is organised around application features. Selected modules separate presentation, domain logic and data access to clarify responsibilities and support testing.",
+    "challenges": [
+      {
+        "title": "Transferring guest progress safely",
+        "problem": "Completed guest quiz records must reach the intended account, even when a transfer is interrupted or retried.",
+        "solution": "The transfer binds local records to that account and uses import receipts to prevent duplicate attempts. Failed transfers retain the local records for retry."
+      }
+    ],
+    "validation": "For this release, 562 Flutter tests passed and static analysis reported no issues in lib, test and tools. Selected Home ranking recovery flows were checked on a physical Android device. The app was distributed through Google Play Closed Testing.",
+    "releaseMilestone": {
+      "version": "1.4.2 (9)",
+      "date": "30 October 2026",
+      "checks": [
+        "562 Flutter tests passed.",
+        "Static analysis reported no issues within lib, test and tools.",
+        "The Android release package passed the recorded signing and package checks.",
+        "Physical-device checks verified the documented Home ranking recovery scenarios.",
+        "The release was available to selected Google Play Closed Testing users."
+      ],
+      "scope": "Evidence shown here refers to this release and the documented validation scope."
+    },
+    "next": "Continue improving content accuracy, continuity of learning and application reliability through feedback and verification.",
+    "reflection": "This taught me to treat data ownership and failure recovery as part of the learning experience.",
+    "conciseCaseStudy": true
+  }
+]

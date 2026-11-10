@@ -1,0 +1,27 @@
+{
+  "draft": true,
+  "name": "Welljoel Ali @ Walter",
+  "university": "Universiti Malaysia Sabah",
+  "degree": "Computer Science",
+  "programmeName": "Bachelor of Computer Science with Honours (Software Engineering)",
+  "programmeCode": "UH6481001",
+  "faculty": "Faculty of Computing and Informatics",
+  "campus": "Kota Kinabalu",
+  "specialisation": "Software Engineering",
+  "studyPeriod": "",
+  "graduation": "",
+  "location": "",
+  "internshipStart": "22 February 2027",
+  "internshipEnd": "6 August 2027",
+  "email": "joelwelljoelwaltervia@gmail.com",
+  "github": "https://github.com/wilanwell",
+  "linkedin": "",
+  "portrait": "/assets/welljoel-portrait.jpg",
+  "cv": "",
+  "siteUrl": "",
+  "intro": "A Computer Science student specialising in Software Engineering, building mobile applications with Flutter and looking for an opportunity to grow.",
+  "about": [
+    "I’m studying Computer Science at Universiti Malaysia Sabah, with a focus on Software Engineering. I’m interested in how thoughtful interfaces, application logic and data come together to make useful software.",
+    "My current projects include HerbaSabah and Pengajian AM STPM Objektif. I’m looking for an internship where I can contribute, learn from experienced engineers and keep improving."
+  ]
+}
