@@ -10,18 +10,22 @@
   "specialisation": "Software Engineering",
   "studyPeriod": "",
   "graduation": "",
-  "location": "",
+  "location": "Kota Kinabalu, Sabah, Malaysia",
   "internshipStart": "22 February 2027",
   "internshipEnd": "6 August 2027",
   "email": "joelwelljoelwaltervia@gmail.com",
   "github": "https://github.com/wilanwell",
-  "linkedin": "",
+  "linkedin": "https://www.linkedin.com/in/welljoel-ali-walter-b50039292",
   "portrait": "/assets/welljoel-portrait.jpg",
   "cv": "",
   "siteUrl": "",
   "intro": "A Computer Science student specialising in Software Engineering, building mobile applications with Flutter and looking for an opportunity to grow.",
+  "summary": "I’m a Software Engineering student at Universiti Malaysia Sabah (UMS), focused on software design and mobile app development, with growing experience in web development and intelligent systems. I’ve built Pengajian AM STPM Objektif, a Flutter and Supabase revision app now live on Google Play, as well as this portfolio with React and TypeScript. I prioritise maintainable, clean code, thorough testing and user-friendly experiences that people genuinely find useful.",
+  "headline": "From Real Problems to Reliable Software",
   "about": [
-    "I’m studying Computer Science at Universiti Malaysia Sabah, with a focus on Software Engineering. I’m interested in how thoughtful interfaces, application logic and data come together to make useful software.",
-    "My current projects include HerbaSabah and Pengajian AM STPM Objektif. I’m looking for an internship where I can contribute, learn from experienced engineers and keep improving."
-  ]
+    "I’m a Software Engineering student at Universiti Malaysia Sabah, based in Kota Kinabalu. I’m interested in how thoughtful interfaces, application logic and data come together to make software people actually use.",
+    "My projects start from real problems. Pengajian AM STPM Objektif grew out of my own experience as an STPM student. It brings together objective quizzes, answer explanations and a Mistake Book for focused revision, and it’s now live on Google Play.",
+    "I build with Flutter and Supabase, test as I go, and keep refining until things work properly. I’m looking for an internship where I can contribute to a real team and keep learning every day."
+  ],
+  "philosophy": "I don’t believe anything is impossible to build or learn. If I commit to something, I’ll see it through, however long it takes. Consistency and discipline decide the result. I’m happy to work with anyone, as long as I’m learning something every day and building something useful."
 }

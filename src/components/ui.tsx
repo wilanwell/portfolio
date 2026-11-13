@@ -280,12 +280,12 @@ export function ProjectVisual({
   return (
     <figure className={`project-figure ${large ? "large-visual" : ""}`}>
       <div
-        className={`project-visual ${screen ? "study-visual" : "herb-visual"}`}
+        className={`project-visual ${screen ? "study-visual" : "brand-visual"}`}
       >
         <span className="visual-category">
           {screen
             ? "Learning, made mobile."
-            : "Knowledge, rooted in community."}
+            : project.tagline}
         </span>
         <div className="visual-rings" aria-hidden="true" />
         {screen ? (

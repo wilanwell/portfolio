@@ -29,8 +29,8 @@ for (const project of projects) {
 }
 if (process.argv.includes('--release')) {
   const missing = ['name','university','internshipStart','internshipEnd','email','portrait','cv'].filter(key => !profile[key]);
-  if (missing.length || profile.draft || projects.some(project => !project.role || !project.contributions.length)) {
+  if (missing.length || profile.draft || projects.some(project => !project.hidden && (!project.role || !project.contributions.length))) {
     throw new Error(`Release is not ready. Complete profile fields: ${missing.join(', ') || 'none'}; set draft=false and confirm project roles/contributions. Use npm run build for local review.`);
   }
 }
-console.log(`Content validated: ${projects.length} projects; ${profile.draft ? 'draft' : 'public'} mode.`);
+console.log(`Content validated: ${projects.filter(project => !project.hidden).length} visible of ${projects.length} projects; ${profile.draft ? 'draft' : 'public'} mode.`);

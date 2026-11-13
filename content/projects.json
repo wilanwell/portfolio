@@ -1,83 +1,12 @@
 [
   {
-    "slug": "herbasabah",
-    "name": "HerbaSabah",
-    "category": "Herbal knowledge · Community · Mobile",
-    "summary": "A community herbal knowledge app with preliminary identification and reference-based AI contributions.",
-    "tagline": "Local knowledge. Shared discovery.",
-    "status": "In development",
-    "statusAsOf": "2026-10-30",
-    "platform": "Flutter mobile application",
-    "period": "",
-    "role": "",
-    "contributions": [],
-    "technologies": [
-      "Flutter",
-      "Dart",
-      "Supabase",
-      "Gemini"
-    ],
-    "cover": "/assets/herbasabah-icon.png",
-    "coverAlt": "HerbaSabah application icon featuring a herb, mountain and mortar",
-    "coverCaption": "HerbaSabah application identity",
-    "coverKind": "brand",
-    "github": "",
-    "demo": "",
-    "store": "",
-    "overview": "HerbaSabah brings herbal information and community contributions into a mobile application. It combines knowledge exploration, preliminary image-based identification and workflows for reviewing contributed content. The app is intended for education and community reference, not medical advice.",
-    "problem": "Herbal information can come from community experience and different reference materials. This project explores how that information can be organised, contributed and reviewed through a coherent mobile experience.",
-    "objectives": [
-      "Make Sabah herbal knowledge accessible through a mobile interface.",
-      "Let community members contribute information and supporting references.",
-      "Support content review, reporting and contribution status tracking.",
-      "Help users prepare AI-assisted drafts that they can check against their sources."
-    ],
-    "features": [
-      {
-        "title": "Explore herbal knowledge",
-        "text": "Browse herbal information and use it as a starting point for learning and community reference."
-      },
-      {
-        "title": "Preliminary identification",
-        "text": "Use an image to obtain an initial identification suggestion. Results require further checking and are not definitive species confirmation."
-      },
-      {
-        "title": "Community contributions",
-        "text": "Submit knowledge through contribution workflows and follow its review status."
-      },
-      {
-        "title": "Reference-based AI drafting",
-        "text": "Prepare a draft using selected text, images and PDF references. PDF extracts can include quotations and page numbers for review before submission."
-      },
-      {
-        "title": "Source discovery and assistance",
-        "text": "Open Google searches for original sources and use the in-app assistant to explore herbal information."
-      },
-      {
-        "title": "Content review and reporting",
-        "text": "Manage contributions and reports through dedicated review and moderation workflows."
-      }
-    ],
-    "architecture": "The Flutter code is organised by feature, separating presentation, domain logic and data access. Supabase provides authentication, PostgreSQL, file storage and feature-specific backend functions.",
-    "challenges": [
-      {
-        "title": "Making AI output traceable to its sources",
-        "problem": "An extracted statement is difficult to review if the user cannot see where it came from.",
-        "solution": "The PDF contribution flow connects extracted information with source quotations and page numbers. Users select the references, inspect the draft and decide what to submit. Document errors and service failures are handled separately."
-      }
-    ],
-    "validation": "Recorded validation includes Flutter and backend tests, plus phone checks of PDF selection, private document access, source search and draft review. These checks apply to the documented contribution workflows; the entire application is not described as production-ready.",
-    "next": "Continue refining the contribution interface and verify further changes through focused tests and device checks.",
-    "reflection": "This project connects interface design, community content, backend data and AI-assisted workflows. It highlights the importance of reviewable sources and clear handling of partial failures."
-  },
-  {
     "slug": "pengajian-am",
     "name": "Pengajian AM STPM Objektif",
     "category": "Education · Mobile learning · Android",
     "summary": "An Android learning application inspired by my experience as an STPM student. It brings together objective quizzes, answer explanations, mistake review and focused ABK practice to support independent revision.",
     "tagline": "From personal learning experience to a mobile revision application.",
-    "status": "Closed testing",
-    "statusAsOf": "2026-10-30",
+    "status": "Live on Google Play",
+    "statusAsOf": "2026-11-13",
     "platform": "Android · Flutter",
     "period": "5 July 2026",
     "startDate": "2026-07-05",
@@ -87,7 +16,7 @@
     "contributions": [
       "Define the product requirements and plan the learning flow around students' revision needs.",
       "Use AI tools to support implementation and troubleshooting, then review changes through hands-on checks and test results.",
-      "Prioritise fixes and coordinate release preparation for Google Play Closed Testing."
+      "Prioritise fixes and coordinate the release on Google Play, from Closed Testing to production."
     ],
     "technologies": [
       "Flutter",
@@ -103,7 +32,7 @@
     "coverKind": "screen",
     "github": "",
     "demo": "",
-    "store": "",
+    "store": "https://play.google.com/store/apps/details?id=com.welljoel.pengajian_am_stpm_objektif",
     "overview": "An Android revision app inspired by my STPM experience, designed to make objective question practice easier to access and repeat.",
     "inspiration": {
       "title": "Why I Started This Project",
@@ -142,7 +71,7 @@
         "solution": "The transfer binds local records to that account and uses import receipts to prevent duplicate attempts. Failed transfers retain the local records for retry."
       }
     ],
-    "validation": "For this release, 562 Flutter tests passed and static analysis reported no issues in lib, test and tools. Selected Home ranking recovery flows were checked on a physical Android device. The app was distributed through Google Play Closed Testing.",
+    "validation": "For release 1.4.2, 562 Flutter tests passed and static analysis reported no issues in lib, test and tools. Selected Home ranking recovery flows were checked on a physical Android device. After Google Play Closed Testing, the app moved to production with version 1.4.4 on 9 November 2026. The current production release is 1.4.11 (18), published on 13 November 2026.",
     "releaseMilestone": {
       "version": "1.4.2 (9)",
       "date": "30 October 2026",
@@ -157,6 +86,8 @@
     },
     "next": "Continue improving content accuracy, continuity of learning and application reliability through feedback and verification.",
     "reflection": "This taught me to treat data ownership and failure recovery as part of the learning experience.",
-    "conciseCaseStudy": true
+    "conciseCaseStudy": true,
+    "downloads": "10+",
+    "currentVersion": "1.4.11 (18)"
   }
 ]

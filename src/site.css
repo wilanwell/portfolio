@@ -334,9 +334,9 @@ html {
   -webkit-text-fill-color: transparent;
 }
 .intro-statement {
-  max-width: 600px;
+  max-width: 620px;
   margin-top: 26px;
-  font-size: 19px;
+  font-size: 17.5px;
   line-height: 1.65;
   color: var(--text-2);
 }
@@ -580,7 +580,7 @@ html {
 }
 .work-meta {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
   gap: 20px;
   margin: 26px 0 0;
   padding-top: 20px;
@@ -588,21 +588,50 @@ html {
 }
 .work-meta dd {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 8px;
   margin: 4px 0 0;
   font-size: 14.5px;
   color: var(--text);
 }
+.work-meta dd .status-dot {
+  margin-top: 0.6em;
+}
 .work-body .tags {
   margin-block: 18px 0;
+}
+.work-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 14px 22px;
+  margin-top: auto;
+  padding-top: 26px;
+}
+/* Sits above the card-wide link so it stays clickable. */
+.work-store {
+  position: relative;
+  z-index: 3;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 7px 13px;
+  border: 1px solid var(--border-strong);
+  border-radius: 9px;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--text);
+  background: #ffffff08;
+}
+.work-store:hover {
+  color: var(--text);
+  border-color: #c084fc66;
+  background: #c084fc14;
 }
 .work-cta {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  margin-top: auto;
-  padding-top: 26px;
   font-size: 14.5px;
   font-weight: 600;
   color: var(--accent);
@@ -636,6 +665,30 @@ html {
   font-size: 17px;
   line-height: 1.8;
   color: var(--text-2);
+}
+.philosophy {
+  margin-top: 32px;
+  padding: 24px 26px;
+  border: 1px solid #c084fc33;
+  border-left: 3px solid var(--accent);
+  border-radius: 14px;
+  background: linear-gradient(135deg, #c084fc12, #ffffff04);
+}
+.philosophy figcaption {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--mono);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.9px;
+  color: var(--accent);
+}
+.philosophy blockquote {
+  margin: 12px 0 0;
+  font-size: 17px;
+  line-height: 1.75;
+  color: var(--text);
 }
 .glance {
   padding: 28px;

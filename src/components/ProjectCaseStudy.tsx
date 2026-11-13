@@ -160,11 +160,21 @@ export default function ProjectCaseStudy({ project }: { project: Project }) {
               <dt>{project.startDate ? "Start date" : "Period"}</dt>
               <dd>{project.period || "Ongoing development"}</dd>
             </div>
-            {project.releaseMilestone && (
+            {project.currentVersion ? (
               <div>
-                <dt>Release reference</dt>
-                <dd>v{project.releaseMilestone.version}</dd>
+                <dt>Current release</dt>
+                <dd>
+                  v{project.currentVersion}
+                  {project.downloads && ` · ${project.downloads} downloads`}
+                </dd>
               </div>
+            ) : (
+              project.releaseMilestone && (
+                <div>
+                  <dt>Release reference</dt>
+                  <dd>v{project.releaseMilestone.version}</dd>
+                </div>
+              )
             )}
           </dl>
           <ProjectVisual project={project} large />
@@ -313,15 +323,17 @@ export default function ProjectCaseStudy({ project }: { project: Project }) {
             )}
           </div>
         </div>
-        <section className="case-next">
-          <div>
-            <div className="eyebrow">Keep exploring</div>
-            <h2>{nextProject.name}</h2>
-          </div>
-          <ActionLink href={projectPath(nextProject)} primary>
-            Explore project
-          </ActionLink>
-        </section>
+        {nextProject !== project && (
+          <section className="case-next">
+            <div>
+              <div className="eyebrow">Keep exploring</div>
+              <h2>{nextProject.name}</h2>
+            </div>
+            <ActionLink href={projectPath(nextProject)} primary>
+              Explore project
+            </ActionLink>
+          </section>
+        )}
       </div>
       <Contact />
     </>

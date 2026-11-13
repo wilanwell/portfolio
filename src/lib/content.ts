@@ -23,11 +23,16 @@ export interface Profile {
   cv: string;
   siteUrl: string;
   intro: string;
+  summary?: string;
+  headline?: string;
+  philosophy?: string;
   about: string[];
 }
 
 export interface Project {
   slug: string;
+  /** Hidden projects stay in content/projects.json but are not published. */
+  hidden?: boolean;
   conciseCaseStudy?: boolean;
   name: string;
   category: string;
@@ -52,6 +57,8 @@ export interface Project {
   github: string;
   demo: string;
   store: string;
+  downloads?: string;
+  currentVersion?: string;
   overview: string;
   inspiration?: { title: string; paragraphs: string[] };
   problem: string;
@@ -73,7 +80,9 @@ export interface Project {
 }
 
 export const profile: Profile = profileData;
-export const projects: Project[] = projectData;
+export const projects: Project[] = (projectData as Project[]).filter(
+  (project) => !project.hidden,
+);
 export const projectPath = (project: Project) => `/projects/${project.slug}/`;
 export const identity = profile.name || 'Software Engineering Portfolio';
 export const availability = `${profile.internshipStart} – ${profile.internshipEnd}`;

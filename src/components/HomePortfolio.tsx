@@ -1,11 +1,13 @@
 import {
   ArrowRight,
+  ArrowUpRight,
   BookOpen,
   CheckCheck,
   Compass,
   Database,
   Hammer,
   PenTool,
+  Quote,
   RefreshCw,
   Smartphone,
 } from "lucide-react";
@@ -90,8 +92,8 @@ const toolkit = [
   {
     icon: CheckCheck,
     title: "Testing & delivery",
-    text: "Automated Flutter tests, version control with Git and releases through Google Play testing tracks.",
-    items: ["Flutter Test", "Git", "Google Play testing"],
+    text: "Automated Flutter tests, version control with Git and releases on Google Play, from testing tracks to production.",
+    items: ["Flutter Test", "Git", "Google Play release"],
   },
 ];
 
@@ -127,6 +129,7 @@ const process = [
 
 export default function HomePortfolio() {
   const [firstName, lastName] = profile.name.split(" @ ");
+  const liveCount = projects.filter((project) => project.store).length;
   return (
     <>
       <section className="landing wrap" aria-labelledby="intro-heading">
@@ -145,11 +148,7 @@ export default function HomePortfolio() {
             {firstName}
             {lastName && <span className="intro-accent"> @ {lastName}</span>}
           </h1>
-          <p className="intro-statement">
-            I build mobile applications with <strong>Flutter</strong> and{" "}
-            <strong>Supabase</strong>, connecting thoughtful interfaces,
-            application logic and data into software that is genuinely useful.
-          </p>
+          <p className="intro-statement">{profile.summary || profile.intro}</p>
           <div className="actions">
             <ActionLink href="/#projects" primary icon="down">
               View selected work
@@ -182,7 +181,13 @@ export default function HomePortfolio() {
             <div>
               <dt>Projects</dt>
               <dd>
-                {projects.length} applications in progress
+                {[
+                  liveCount && `${liveCount} live on Google Play`,
+                  projects.length - liveCount &&
+                    `${projects.length - liveCount} in development`,
+                ]
+                  .filter(Boolean)
+                  .join(" · ")}
               </dd>
             </div>
           </dl>
@@ -244,11 +249,25 @@ export default function HomePortfolio() {
                         {project.status}
                       </dd>
                     </div>
+                    {project.downloads && (
+                      <div>
+                        <dt>Downloads</dt>
+                        <dd>{project.downloads} on Google Play</dd>
+                      </div>
+                    )}
                   </dl>
                   <Tags items={project.technologies} />
-                  <span className="work-cta" aria-hidden="true">
-                    Read case study <ArrowRight size={16} />
-                  </span>
+                  <div className="work-actions">
+                    <span className="work-cta" aria-hidden="true">
+                      Read case study <ArrowRight size={16} />
+                    </span>
+                    {project.store && (
+                      <a className="work-store" href={project.store}>
+                        Get it on Google Play
+                        <ArrowUpRight size={15} aria-hidden="true" />
+                      </a>
+                    )}
+                  </div>
                 </div>
               </article>
             </Reveal>
@@ -265,12 +284,21 @@ export default function HomePortfolio() {
         />
         <div className="about-layout">
           <Reveal className="about-text">
-            <p className="about-lead">
-              Curious by nature. <span>Learning through practice.</span>
-            </p>
+            {profile.headline && (
+              <h3 className="about-lead">{profile.headline}</h3>
+            )}
             {profile.about.map((paragraph) => (
               <p key={paragraph}>{paragraph}</p>
             ))}
+            {profile.philosophy && (
+              <figure className="philosophy">
+                <figcaption>
+                  <Quote size={16} aria-hidden="true" />
+                  Work philosophy
+                </figcaption>
+                <blockquote>{profile.philosophy}</blockquote>
+              </figure>
+            )}
           </Reveal>
           <Reveal className="glance">
             <p className="glance-title">At a glance</p>

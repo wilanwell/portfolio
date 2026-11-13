@@ -8,7 +8,8 @@ const dist=path.join(root,'dist');
 const exists=async file=>{try{await access(file);return true;}catch{return false;}};
 const files=await readdir(dist,{recursive:true});
 const htmlFiles=files.filter(f=>f.endsWith('.html'));
-assert.equal(htmlFiles.length,4,'Expected home, two projects and a 404 page.');
+const visibleProjects=JSON.parse(await readFile(path.join(root,'content/projects.json'),'utf8')).filter(project=>!project.hidden);
+assert.equal(htmlFiles.length,2+visibleProjects.length,'Expected home, one page per visible project and a 404 page.');
 let checked=0;
 for(const f of htmlFiles){
  const content=await readFile(path.join(dist,f),'utf8');
@@ -42,7 +43,7 @@ for(const cssFile of cssFiles){
  }
 }
 const profile=JSON.parse(await readFile(path.join(root,'content/profile.json'),'utf8'));
-const projects=JSON.parse(await readFile(path.join(root,'content/projects.json'),'utf8'));
+const projects=visibleProjects;
 const plain=html=>html.replace(/<[^>]+>/g,' ').replace(/&(?:#x([\da-f]+)|#(\d+)|([a-z]+));/gi,(_,hex,num,name)=>hex?String.fromCodePoint(parseInt(hex,16)):num?String.fromCodePoint(Number(num)):({amp:'&',lt:'<',gt:'>',quot:'"',apos:"'"}[name]||_)).replace(/\s+/g,' ').trim();
 const home=plain(await readFile(path.join(dist,'index.html'),'utf8'));
 for(const value of [profile.name,profile.university,profile.programmeName,profile.faculty,profile.programmeCode,profile.email,...profile.about])assert.ok(home.includes(value.replace(/\s+/g,' ')),`Profile content missing: ${value}`);
